@@ -7,7 +7,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class TranslateResponse {
 
-    private String translatedText;
-    private String ancientScript;
-    private String context;
+    private String translatedText;      // English translation
+    private String modernMongolian;     // Modern Mongolian (Cyrillic)
+    private String ancientScript;       // Classical Mongolian script
+    private String context;             // Historical insight
 }
