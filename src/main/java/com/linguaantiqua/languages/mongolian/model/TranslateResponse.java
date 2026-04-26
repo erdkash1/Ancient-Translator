@@ -8,5 +8,6 @@ import lombok.AllArgsConstructor;
 public class TranslateResponse {
 
     private String translatedText;
+    private String ancientScript;
     private String context;
 }
