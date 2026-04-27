@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lingua Antiqua — Mongolian Translator</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<header>
+    <h1>ᠮᠣᠩᠭᠣᠯ</h1>
+    <p>Ancient Mongolian Translator</p>
+</header>
+
+<main>
+    <div class="input-section">
+        <textarea id="inputText" placeholder="Type in English or Mongolian..."></textarea>
+        <button id="translateBtn" onclick="handleTranslate()">Translate</button>
+    </div>
+
+    <div class="output-section" id="outputSection" style="display:none;">
+        <div class="result-box">
+            <span class="label">English</span>
+            <p id="englishOutput"></p>
+        </div>
+        <div class="result-box">
+            <span class="label">Mongolian</span>
+            <p id="mongolianOutput"></p>
+        </div>
+        <div class="result-box ancient">
+            <span class="label">Ancient Script</span>
+            <p id="scriptOutput"></p>
+        </div>
+        <div class="result-box context">
+            <span class="label">Historical Context</span>
+            <p id="contextOutput"></p>
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
