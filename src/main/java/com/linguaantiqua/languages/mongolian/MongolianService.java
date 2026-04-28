@@ -35,7 +35,7 @@ public class MongolianService {
             - Use proper Mongolian grammar: subject + object + verb structure
             - For expressing love or feelings use "хайртай" NOT "хайрладаг"
             - For example:
-                "I love my friends" → "Би найзууддаа хайртай" 
+                "I love my friends" → "Би найзууддаа хайртай"
                 "I love my mother" → "Би ээждээ хайртай"
                 "I am happy" → "Би баяртай байна"
             - Do NOT use overly formal or literary Mongolian
@@ -45,6 +45,7 @@ public class MongolianService {
             English: [natural fluent English translation]
             Mongolian: [simple natural everyday Mongolian in Cyrillic script]
             Script: [the Mongolian translation in Classical Mongolian script using Unicode ᠠᠡᠢᠣᠤᠥᠦᠧᠨᠩᠪᠫᠬᠭᠮᠯᠰᠱᠲᠳᠴᠵᠶᠷᠸ]
+            Pronunciation: [romanized pronunciation of the Mongolian translation, syllable by syllable with dashes, e.g. "bi naij-uud-daa khair-tai"]
             Context: [one sentence of historical or cultural insight]
             
             Text: %s
@@ -54,6 +55,7 @@ public class MongolianService {
         String translatedText = "";
         String modernMongolian = "";
         String ancientScript = "";
+        String pronunciation = "";
         String context = "";
 
         for (String line : rawResponse.split("\n")) {
@@ -63,11 +65,13 @@ public class MongolianService {
                 modernMongolian = line.replace("Mongolian:", "").trim();
             } else if (line.startsWith("Script:")) {
                 ancientScript = line.replace("Script:", "").trim();
+            } else if (line.startsWith("Pronunciation:")) {
+                pronunciation = line.replace("Pronunciation:", "").trim();
             } else if (line.startsWith("Context:")) {
                 context = line.replace("Context:", "").trim();
             }
         }
 
-        return new TranslateResponse(translatedText, modernMongolian, ancientScript, context);
+        return new TranslateResponse(translatedText, modernMongolian, ancientScript, pronunciation, context);
     }
 }
