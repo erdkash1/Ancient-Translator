@@ -30,6 +30,7 @@ async function handleTranslate() {
         document.getElementById('englishOutput').textContent = data.translatedText;
         document.getElementById('mongolianOutput').textContent = data.modernMongolian;
         document.getElementById('scriptOutput').textContent = data.ancientScript;
+        document.getElementById('pronunciationOutput').textContent = data.pronunciation;
         document.getElementById('contextOutput').textContent = data.context;
 
         console.log('Setting display to block');
