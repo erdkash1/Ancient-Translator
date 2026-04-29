@@ -458,4 +458,9 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
     color: rgba(249, 204, 42, 0.15);
     margin-top: 0.5rem;
     letter-spacing: 0.3em;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    display: block;
+    margin: 0.5rem auto;
+    height: 80px;
 }
