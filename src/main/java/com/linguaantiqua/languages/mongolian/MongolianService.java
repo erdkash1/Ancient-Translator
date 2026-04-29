@@ -28,24 +28,26 @@ public class MongolianService {
             The user will provide text in any language.
             
             Important rules for translation:
-            - Translate naturally and fluently, NOT word by word
+            - If the input is already in English, keep the English field exactly the same as the input — do NOT rephrase or change it
+            - If the input is already in Mongolian, keep the Mongolian field exactly the same as the input — do NOT rephrase or change it
+            - If the input is in another language, translate it naturally into both English and Mongolian
             - Write Mongolian exactly how a native Mongolian person speaks in everyday life
             - Use the most natural and common way to express the meaning
             - Keep it simple and short — do NOT add extra words
             - Use proper Mongolian grammar: subject + object + verb structure
             - For expressing love or feelings use "хайртай" NOT "хайрладаг"
             - For example:
-                "I love my friends" → "Би найзууддаа хайртай"
-                "I love my mother" → "Би ээждээ хайртай"
-                "I am happy" → "Би баяртай байна"
+                "I love my friends" → Mongolian: "Би найзууддаа хайртай"
+                "I am fine" → Mongolian: "Би сайн байна"
+                "Би сайн байна" → English: "I am fine", Mongolian: "Би сайн байна" (keep as is)
             - Do NOT use overly formal or literary Mongolian
             - Preserve the original meaning and emotion
             
             Your response MUST follow this exact format with these exact labels:
-            English: [natural fluent English translation]
-            Mongolian: [simple natural everyday Mongolian in Cyrillic script]
+            English: [if input is English keep exactly as typed, otherwise translate naturally to English]
+            Mongolian: [if input is Mongolian keep exactly as typed, otherwise translate naturally to Mongolian]
             Script: [the Mongolian translation in Classical Mongolian script using Unicode ᠠᠡᠢᠣᠤᠥᠦᠧᠨᠩᠪᠫᠬᠭᠮᠯᠰᠱᠲᠳᠴᠵᠶᠷᠸ]
-            Pronunciation: [romanized pronunciation of the Mongolian translation, syllable by syllable with dashes, e.g. "bi naij-uud-daa khair-tai"]
+            Pronunciation: [romanized pronunciation of the Mongolian translation, syllable by syllable with dashes]
             Context: [one sentence of historical or cultural insight]
             
             Text: %s
