@@ -5,45 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Lingua Antiqua — Mongolian Translator</title>
     <link rel="stylesheet" href="style.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+<!-- Background pattern -->
+<div class="bg-pattern"></div>
+
+<!-- Top stripe -->
+<div class="flag-stripe">
+    <div class="stripe red"></div>
+    <div class="stripe blue"></div>
+    <div class="stripe red"></div>
+</div>
+
 <header>
+    <!-- Soyombo symbol -->
+    <div class="soyombo">☀️🌙</div>
+    <div class="ornament-line">
+        <span class="ornament-dot"></span>
+        <span class="ornament-bar"></span>
+        <span class="ornament-diamond">◆</span>
+        <span class="ornament-bar"></span>
+        <span class="ornament-dot"></span>
+    </div>
     <h1>ᠮᠣᠩᠭᠣᠯ</h1>
-    <p>Ancient Mongolian Translator</p>
+    <p class="subtitle">Lingua Antiqua</p>
+    <p class="tagline">Translate the tongue of Genghis Khan</p>
+    <div class="ornament-line">
+        <span class="ornament-dot"></span>
+        <span class="ornament-bar"></span>
+        <span class="ornament-diamond">◆</span>
+        <span class="ornament-bar"></span>
+        <span class="ornament-dot"></span>
+    </div>
 </header>
 
 <main>
+    <!-- Decorative side script -->
+    <div class="side-script left">ᠮᠣᠩᠭᠣᠯ ᠤᠯᠤᠰ</div>
+    <div class="side-script right">ᠴᠢᠩᠭᠢᠰ ᠬᠠᠭᠠᠨ</div>
+
     <div class="input-section">
-        <textarea id="inputText" placeholder="Type in English or Mongolian..."></textarea>
-        <button id="translateBtn" onclick="handleTranslate()">Translate</button>
+        <span class="input-label">✦ Enter text in English or Mongolian ✦</span>
+        <div class="textarea-wrapper">
+            <textarea id="inputText" placeholder="e.g. The eternal blue sky..."></textarea>
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+        </div>
+        <button id="translateBtn" onclick="handleTranslate()">
+            <span class="btn-deco">◆</span>
+            &nbsp; Translate &nbsp;
+            <span class="btn-deco">◆</span>
+        </button>
+    </div>
+
+    <div class="section-divider">
+        <span class="div-line"></span>
+        <span class="div-symbol">ᠰ</span>
+        <span class="div-line"></span>
     </div>
 
     <div class="output-section" id="outputSection" style="display:none;">
         <div class="result-box">
-            <span class="label">English</span>
+            <span class="label">🇬🇧 English</span>
             <p id="englishOutput"></p>
         </div>
         <div class="result-box">
-            <span class="label">Mongolian</span>
+            <span class="label">🇲🇳 Mongolian</span>
             <p id="mongolianOutput"></p>
         </div>
         <div class="result-box ancient">
-            <span class="label">Ancient Script</span>
-            <p id="scriptOutput"></p>
+            <span class="label">📜 Ancient Script</span>
+            <div class="script-wrapper">
+                <p id="scriptOutput"></p>
+            </div>
         </div>
-
         <div class="result-box pronunciation">
-            <span class="label">How to say it</span>
+            <span class="label">🔊 How to say it</span>
             <p id="pronunciationOutput"></p>
         </div>
         <div class="result-box context">
-            <span class="label">Historical Context</span>
+            <span class="label">⚔️ Historical Context</span>
             <p id="contextOutput"></p>
         </div>
     </div>
 </main>
+
+<footer>
+    <div class="footer-ornament">◆ ◇ ◆</div>
+    <p>Lingua Antiqua <span>✦</span> Ancient Mongolian Translator <span>✦</span> Мөнх хөх тэнгэр</p>
+    <div class="footer-script">ᠮᠣᠩᠭᠣᠯ</div>
+</footer>
+
+<!-- Bottom stripe -->
+<div class="flag-stripe bottom">
+    <div class="stripe red"></div>
+    <div class="stripe blue"></div>
+    <div class="stripe red"></div>
+</div>
 
 <script src="app.js"></script>
 </body>
