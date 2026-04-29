@@ -2,7 +2,6 @@ const API_URL = 'http://localhost:8080/api/mongolian/translate';
 
 async function handleTranslate() {
     const input = document.getElementById('inputText').value.trim();
-    console.log('Input:', input);
 
     if (!input) {
         alert('Please enter some text to translate!');
@@ -10,6 +9,10 @@ async function handleTranslate() {
     }
 
     const btn = document.getElementById('translateBtn');
+
+    // Prevent double click
+    if (btn.disabled) return;
+
     const outputSection = document.getElementById('outputSection');
 
     btn.disabled = true;
