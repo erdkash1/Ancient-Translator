@@ -34,6 +34,7 @@ public class GroqClient {
         requestBody.put("model", "llama-3.3-70b-versatile");
         requestBody.put("messages", List.of(message));
         requestBody.put("max_tokens", 1024);
+        requestBody.put("temperature", 0);
 
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
 
