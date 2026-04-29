@@ -110,12 +110,15 @@ header h1 {
     font-family: 'Noto Sans Mongolian', serif;
     font-size: 3.5rem;
     color: #F9CC2A;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     text-shadow:
         0 0 30px rgba(249, 204, 42, 0.7),
         0 0 80px rgba(249, 204, 42, 0.3);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
     display: block;
-    margin: 0.5rem 0;
+    margin: 0.5rem auto;
+    height: 200px;
 }
 
 header .subtitle {
@@ -137,23 +140,60 @@ header .tagline {
     letter-spacing: 0.05em;
 }
 
-/* ── SIDE DECORATIVE SCRIPT ── */
-.side-script {
+/* ── SIDE DECORATIVE SCRIPT (LEFT) ── */
+.side-script.left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Noto Sans Mongolian', serif;
     writing-mode: vertical-lr;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: rgba(249, 204, 42, 0.08);
+    font-size: 1.4rem;
+    color: rgba(249, 204, 42, 0.6);
     letter-spacing: 0.2em;
     user-select: none;
     z-index: 0;
+    background: linear-gradient(180deg,
+        rgba(196, 39, 47, 0.2),
+        rgba(34, 85, 164, 0.2),
+        rgba(196, 39, 47, 0.2)
+    );
+    border-right: 1px solid rgba(249, 204, 42, 0.3);
+    padding: 2rem 0;
+    overflow: hidden;
 }
 
-.side-script.left { left: 1rem; }
-.side-script.right { right: 1rem; }
+/* ── SIDE PATTERN (RIGHT) ── */
+.side-script.right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    user-select: none;
+    z-index: 0;
+    background: linear-gradient(180deg,
+        rgba(34, 85, 164, 0.2),
+        rgba(196, 39, 47, 0.2),
+        rgba(34, 85, 164, 0.2)
+    );
+    border-left: 1px solid rgba(249, 204, 42, 0.3);
+    overflow: hidden;
+}
 
+.side-pattern-item {
+    color: rgba(249, 204, 42, 0.6);
+    font-size: 1.3rem;
+    line-height: 1;
+}
 /* ── MAIN ── */
 main {
     max-width: 800px;
