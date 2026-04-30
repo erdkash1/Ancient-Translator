@@ -542,34 +542,45 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
 .map-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .map-box {
-    border: 1px solid rgba(249, 204, 42, 0.2);
-    border-radius: 4px;
+    border: none;
+    border-radius: 0;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .map-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .stat-card {
-    background: rgba(13, 26, 58, 0.7);
-    border: 1px solid rgba(34, 85, 164, 0.25);
-    border-left: 3px solid #F9CC2A;
-    border-radius: 2px;
-    padding: 1rem 1.2rem;
+    background: transparent;
+    border: none;
+    border-left: none;
+    border-bottom: 1px solid rgba(249, 204, 42, 0.1);
+    border-radius: 0;
+    padding: 1rem 0;
     display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-card:last-child {
+    border-bottom: none;
 }
 
 .stat-icon {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    min-width: 2rem;
 }
 
 .stat-number {
@@ -577,21 +588,15 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
     font-size: 1rem;
     color: #F9CC2A;
     font-weight: 600;
+    min-width: 180px;
 }
 
 .stat-label {
     font-family: 'IM Fell English', serif;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #6a80a8;
     font-style: italic;
 }
-#mongoliaMap {
-    height: 400px;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid rgba(249, 204, 42, 0.2);
-}
-
 
 /* ── MAP POPUP ── */
 .leaflet-popup-content-wrapper {
@@ -611,4 +616,14 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
     font-family: 'Cinzel', serif;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
+}
+.leaflet-container {
+    background: #080d1a !important;
+}
+#mongoliaMap {
+    height: 400px;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    background: transparent;
 }
