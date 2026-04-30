@@ -50,11 +50,11 @@ function initMap() {
         scrollWheelZoom: false
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '© CartoDB',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+      attribution: '© CartoDB',
+      subdomains: 'abcd',
+      maxZoom: 19
+  }).addTo(map);
 
     const goldIcon = L.divIcon({
         className: '',
