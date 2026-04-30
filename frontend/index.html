@@ -6,6 +6,8 @@
     <title>Lingua Antiqua — Mongolian Translator</title>
     <link rel="stylesheet" href="style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -114,6 +116,60 @@
         </div>
     </div>
 </main>
+
+<!-- Scroll invitation -->
+<div class="scroll-invite">
+    <p>Explore Mongolia</p>
+    <div class="scroll-arrow">↓</div>
+</div>
+
+<!-- ── CULTURAL SECTIONS ── -->
+<section class="culture-section" id="map-section">
+    <div class="culture-container">
+        <div class="section-header">
+            <div class="section-ornament">◆</div>
+            <h2>Where is Mongolia?</h2>
+            <p class="section-sub">Nestled between Russia and China, home of the eternal blue sky</p>
+        </div>
+        <div class="map-grid">
+            <div class="map-box">
+                <div id="mongoliaMap"></div>
+            </div>
+            <div class="map-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">📍</span>
+                    <span class="stat-number">1,564,116</span>
+                    <span class="stat-label">km² — 18th largest country</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">👥</span>
+                    <span class="stat-number">3.4 Million</span>
+                    <span class="stat-label">Population</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏙️</span>
+                    <span class="stat-number">Ulaanbaatar</span>
+                    <span class="stat-label">Capital city — home to 45% of population</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🌡️</span>
+                    <span class="stat-number">-40°C to +40°C</span>
+                    <span class="stat-label">Extreme continental climate</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🐎</span>
+                    <span class="stat-number">70 Million</span>
+                    <span class="stat-label">Livestock — more animals than people</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">☀️</span>
+                    <span class="stat-number">260+</span>
+                    <span class="stat-label">Sunny days per year — Land of Blue Sky</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="footer-ornament">◆ ◇ ◆</div>
