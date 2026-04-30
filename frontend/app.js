@@ -10,7 +10,6 @@ async function handleTranslate() {
 
     const btn = document.getElementById('translateBtn');
 
-    // Prevent double click
     if (btn.disabled) return;
 
     const outputSection = document.getElementById('outputSection');
@@ -25,10 +24,7 @@ async function handleTranslate() {
             body: JSON.stringify({ text: input })
         });
 
-        console.log('Response status:', response.status);
-
         const data = await response.json();
-        console.log('Data received:', data);
 
         document.getElementById('englishOutput').textContent = data.translatedText;
         document.getElementById('mongolianOutput').textContent = data.modernMongolian;
@@ -36,15 +32,121 @@ async function handleTranslate() {
         document.getElementById('pronunciationOutput').textContent = data.pronunciation;
         document.getElementById('contextOutput').textContent = data.context;
 
-        console.log('Setting display to block');
         outputSection.style.display = 'block';
-        console.log('Display set:', outputSection.style.display);
 
     } catch (error) {
-        console.log('Error:', error);
         alert(error.message);
     } finally {
         btn.disabled = false;
         btn.textContent = 'Translate';
     }
 }
+
+function initMap() {
+    const map = L.map('mongoliaMap', {
+        center: [46.8625, 103.8467],
+        zoom: 4,
+        zoomControl: true,
+        scrollWheelZoom: false
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '© CartoDB',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    const goldIcon = L.divIcon({
+        className: '',
+        html: `<div style="
+            width: 16px;
+            height: 16px;
+            background: #F9CC2A;
+            border: 2px solid #C4272F;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(249,204,42,0.8);
+        "></div>`,
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+    });
+
+    const capitalIcon = L.divIcon({
+        className: '',
+        html: `<div style="
+            width: 12px;
+            height: 12px;
+            background: #C4272F;
+            border: 2px solid #F9CC2A;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(196,39,47,0.8);
+        "></div>`,
+        iconSize: [12, 12],
+        iconAnchor: [6, 6]
+    });
+
+    L.marker([46.8625, 103.8467], { icon: goldIcon })
+        .addTo(map)
+        .bindPopup(`
+            <div style="
+                background: #080d1a;
+                color: #F9CC2A;
+                font-family: 'Cinzel', serif;
+                font-size: 0.8rem;
+                letter-spacing: 0.1em;
+                border: 1px solid rgba(249,204,42,0.3);
+                padding: 0.5rem;
+                border-radius: 4px;
+            ">
+                🇲🇳 Mongolia<br/>
+                <span style="color:#f0e6d3; font-size:0.7rem;">1,564,116 km²</span>
+            </div>
+        `, { className: 'custom-popup' })
+        .openPopup();
+
+    L.marker([47.8864, 106.9057], { icon: capitalIcon })
+        .addTo(map)
+        .bindPopup(`
+            <div style="
+                background: #080d1a;
+                color: #C4272F;
+                font-family: 'Cinzel', serif;
+                font-size: 0.8rem;
+                letter-spacing: 0.1em;
+                border: 1px solid rgba(196,39,47,0.3);
+                padding: 0.5rem;
+                border-radius: 4px;
+            ">
+                🏙️ Ulaanbaatar<br/>
+                <span style="color:#f0e6d3; font-size:0.7rem;">Capital City</span>
+            </div>
+        `);
+
+    const empireCoords = [
+        [55, 30], [65, 60], [65, 100], [60, 130],
+        [50, 140], [35, 140], [20, 120], [15, 80],
+        [25, 50], [35, 30], [45, 25], [55, 30]
+    ];
+
+    L.polygon(empireCoords, {
+        color: 'rgba(249, 204, 42, 0.6)',
+        fillColor: 'rgba(249, 204, 42, 0.05)',
+        fillOpacity: 1,
+        weight: 1.5,
+        dashArray: '6, 4'
+    }).addTo(map)
+    .bindTooltip('Mongol Empire at Peak (13th century)', {
+        permanent: false,
+        direction: 'top',
+        className: 'empire-tooltip'
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('inputText').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+            handleTranslate();
+        }
+    });
+
+    initMap();
+});
