@@ -9,7 +9,6 @@ async function handleTranslate() {
     }
 
     const btn = document.getElementById('translateBtn');
-
     if (btn.disabled) return;
 
     const outputSection = document.getElementById('outputSection');
@@ -50,11 +49,11 @@ function initMap() {
         scrollWheelZoom: false
     });
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-      attribution: '© CartoDB',
-      subdomains: 'abcd',
-      maxZoom: 19
-  }).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: '© CartoDB',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
 
     const goldIcon = L.divIcon({
         className: '',
@@ -141,6 +140,32 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
     });
 }
 
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Observe map
+    const mapEl = document.getElementById('mongoliaMap');
+    if (mapEl) observer.observe(mapEl);
+
+    // Observe stat cards with stagger
+    document.querySelectorAll('.stat-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Observe people cards with stagger
+    document.querySelectorAll('.people-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('inputText').addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -149,4 +174,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     initMap();
+    initScrollAnimations();
 });
