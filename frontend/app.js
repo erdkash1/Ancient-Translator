@@ -89,7 +89,7 @@ function initMap() {
             <div style="
                 background: #080d1a;
                 color: #F9CC2A;
-                font-family: 'Cinzel', serif;
+                font-family: 'Philosopher', serif;
                 font-size: 0.8rem;
                 letter-spacing: 0.1em;
                 border: 1px solid rgba(249,204,42,0.3);
@@ -108,7 +108,7 @@ function initMap() {
             <div style="
                 background: #080d1a;
                 color: #C4272F;
-                font-family: 'Cinzel', serif;
+                font-family: 'Philosopher', serif;
                 font-size: 0.8rem;
                 letter-spacing: 0.1em;
                 border: 1px solid rgba(196,39,47,0.3);
@@ -153,13 +153,13 @@ function initScrollAnimations() {
     const mapEl = document.getElementById('mongoliaMap');
     if (mapEl) observer.observe(mapEl);
 
-    // Observe stat cards with stagger
+    // Observe stat cards
     document.querySelectorAll('.stat-card').forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
     });
 
-    // Observe people cards with stagger
+    // Observe people cards
     document.querySelectorAll('.people-card').forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
@@ -176,7 +176,19 @@ function initScrollAnimations() {
         fact.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(fact);
     });
+
+    // Observe khan quote
+    document.querySelectorAll('.khan-quote').forEach((el) => {
+        observer.observe(el);
+    });
+
+    // Observe khan stats
+    document.querySelectorAll('.khan-stat').forEach((stat, index) => {
+        stat.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(stat);
+    });
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('inputText').addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -186,16 +198,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initMap();
     initScrollAnimations();
-});
-
-// Observe timeline items
-document.querySelectorAll('.timeline-item').forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.15}s`;
-    observer.observe(item);
-});
-
-// Observe script facts
-document.querySelectorAll('.script-fact').forEach((fact, index) => {
-    fact.style.transitionDelay = `${index * 0.1}s`;
-    observer.observe(fact);
 });
