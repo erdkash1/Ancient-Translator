@@ -512,7 +512,7 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
 
 .section-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .section-ornament {
@@ -807,4 +807,98 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
     font-size: 0.9rem;
     color: #a0a8c0;
     font-style: italic;
+}
+
+/* ── GENGHIS KHAN SECTION ── */
+.khan-quote {
+    background: linear-gradient(135deg, rgba(13, 26, 58, 0.9), rgba(26, 13, 13, 0.9));
+    border: 1px solid rgba(249, 204, 42, 0.2);
+    border-left: 4px solid #F9CC2A;
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.khan-quote.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.khan-script {
+    font-family: 'Noto Sans Mongolian', serif;
+    font-size: 2rem;
+    color: rgba(249, 204, 42, 0.4);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    height: 120px;
+    letter-spacing: normal;
+    flex-shrink: 0;
+}
+
+.quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f0e6d3;
+    font-style: italic;
+    flex: 1;
+}
+
+.quote-attr {
+    display: block;
+    margin-top: 0.8rem;
+    font-family: 'Philosopher', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #F9CC2A;
+    text-transform: uppercase;
+}
+
+/* ── KHAN STATS ── */
+.khan-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.khan-stat {
+    background: rgba(13, 26, 58, 0.7);
+    border: 1px solid rgba(196, 39, 47, 0.3);
+    border-top: 3px solid #C4272F;
+    border-radius: 4px;
+    padding: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.khan-stat.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.khan-stat-number {
+    font-family: 'Philosopher', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #C4272F;
+    display: block;
+    text-shadow: 0 0 20px rgba(196, 39, 47, 0.4);
+}
+
+.khan-stat-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: #6a80a8;
+    font-style: italic;
+    display: block;
+    margin-top: 0.3rem;
 }
