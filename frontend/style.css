@@ -675,3 +675,137 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* ── WRITING SYSTEM / TIMELINE ── */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg,
+        transparent,
+        #F9CC2A,
+        #2255A4,
+        #C4272F,
+        transparent
+    );
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.4rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #F9CC2A;
+    border: 2px solid #080d1a;
+    box-shadow: 0 0 8px rgba(249, 204, 42, 0.6);
+}
+
+.timeline-year {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: #F9CC2A;
+    letter-spacing: 0.1em;
+    min-width: 70px;
+    padding-top: 0.2rem;
+}
+
+.timeline-content {
+    flex: 1;
+    background: rgba(13, 26, 58, 0.5);
+    border: 1px solid rgba(34, 85, 164, 0.2);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+}
+
+.timeline-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #f0e6d3;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #a0a8c0;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-script {
+    font-family: 'Noto Sans Mongolian', serif;
+    font-size: 1.5rem;
+    color: rgba(249, 204, 42, 0.4);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    height: 80px;
+    letter-spacing: normal;
+}
+
+/* ── SCRIPT FACTS ── */
+.script-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.script-fact {
+    background: rgba(13, 26, 58, 0.5);
+    border: 1px solid rgba(249, 204, 42, 0.15);
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.script-fact.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fact-icon {
+    font-size: 1.3rem;
+}
+
+.fact-text {
+    font-family: 'IM Fell English', serif;
+    font-size: 0.9rem;
+    color: #a0a8c0;
+    font-style: italic;
+}
