@@ -164,8 +164,19 @@ function initScrollAnimations() {
         card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
     });
-}
 
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.15}s`;
+        observer.observe(item);
+    });
+
+    // Observe script facts
+    document.querySelectorAll('.script-fact').forEach((fact, index) => {
+        fact.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(fact);
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('inputText').addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -175,4 +186,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initMap();
     initScrollAnimations();
+});
+
+// Observe timeline items
+document.querySelectorAll('.timeline-item').forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.15}s`;
+    observer.observe(item);
+});
+
+// Observe script facts
+document.querySelectorAll('.script-fact').forEach((fact, index) => {
+    fact.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(fact);
 });
