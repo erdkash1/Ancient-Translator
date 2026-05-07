@@ -204,6 +204,17 @@ function initScrollAnimations() {
         fact.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(fact);
     });
+
+    // Observe section photos
+    document.querySelectorAll('.section-photo').forEach((photo) => {
+        observer.observe(photo);
+    });
+
+    // Observe gallery items
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(item);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
