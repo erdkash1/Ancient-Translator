@@ -187,6 +187,23 @@ function initScrollAnimations() {
         stat.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(stat);
     });
+
+    // Observe naadam intro
+    document.querySelectorAll('.naadam-intro').forEach((el) => {
+        observer.observe(el);
+    });
+
+    // Observe game cards
+    document.querySelectorAll('.game-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.15}s`;
+        observer.observe(card);
+    });
+
+    // Observe naadam facts
+    document.querySelectorAll('.naadam-fact').forEach((fact, index) => {
+        fact.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(fact);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
