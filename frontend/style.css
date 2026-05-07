@@ -902,3 +902,185 @@ footer p span { color: #C4272F; margin: 0 0.5rem; }
     display: block;
     margin-top: 0.3rem;
 }
+
+
+/* ── NAADAM SECTION ── */
+.naadam-intro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(13, 26, 58, 0.5);
+    border: 1px solid rgba(249, 204, 42, 0.15);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.naadam-intro.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.naadam-intro-script {
+    font-family: 'Noto Sans Mongolian', serif;
+    font-size: 2.5rem;
+    color: rgba(249, 204, 42, 0.4);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    height: 140px;
+    letter-spacing: normal;
+    flex-shrink: 0;
+}
+
+.naadam-intro-text h3 {
+    font-family: 'Philosopher', serif;
+    font-size: 1.1rem;
+    color: #F9CC2A;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.naadam-intro-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #a0a8c0;
+    font-style: italic;
+}
+
+/* ── THREE GAMES ── */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.game-card {
+    background: rgba(13, 26, 58, 0.7);
+    border: 1px solid rgba(34, 85, 164, 0.25);
+    border-radius: 4px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+}
+
+.game-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.game-card:hover {
+    border-color: rgba(249, 204, 42, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.game-number {
+    font-family: 'Philosopher', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(249, 204, 42, 0.08);
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    line-height: 1;
+}
+
+.game-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.game-script {
+    font-family: 'Noto Sans Mongolian', serif;
+    font-size: 1rem;
+    color: rgba(249, 204, 42, 0.3);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    height: 60px;
+    letter-spacing: normal;
+    margin-bottom: 0.8rem;
+}
+
+.game-card h3 {
+    font-family: 'Philosopher', serif;
+    font-size: 0.9rem;
+    color: #F9CC2A;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+}
+
+.game-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #a0a8c0;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.game-fact {
+    font-family: 'Philosopher', serif;
+    font-size: 0.75rem;
+    color: #2255A4;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(34, 85, 164, 0.2);
+    padding-top: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+/* ── NAADAM FACTS ── */
+.naadam-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.naadam-fact {
+    background: rgba(13, 26, 58, 0.5);
+    border: 1px solid rgba(34, 85, 164, 0.2);
+    border-top: 3px solid #2255A4;
+    border-radius: 4px;
+    padding: 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.naadam-fact.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.naadam-fact-icon {
+    font-size: 1.3rem;
+}
+
+.naadam-fact-number {
+    font-family: 'Philosopher', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2255A4;
+}
+
+.naadam-fact-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: #6a80a8;
+    font-style: italic;
+}
